@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use strict;
+my $svn = "/usr/bin/svn";
+my $svn_info = `$svn info`;
+$svn_info =~ m!URL\:\s+(.+)!;
+my ($current, $base) = ($1, $1);
+$base =~ s!/(trunk|branches|tags)(/.+)?!!;
+print "Current: $current\nBase: $base\n";
+my $tag = $ARGV[ 0 ] || die "Usage: $0 <tag>\n";
+system( $svn, "cp", $current, "$base/tags/$tag", "-m", "Created tag $tag from trunk" );
+print "Created tag $tag\n";

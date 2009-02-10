@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+{% block head %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- Helvetica, bitches -->
+        <title>{% block title %}{% if subtitle %}{% block subtitle %}{% endblock %} - {% endif %}{{ settings.PRODUCT_NAME }}{% endblock %}</title>
+        <link rel="icon favicon" href="/_s/i/favicon.png" />
+        <link rel="apple-touch-icon" href="/_s/i/touch-icon.png" />
+    {% block head_stylesheets %}
+        <link rel="stylesheet" media="screen" href="/_s/css/reset/screen.css" />
+        <link rel="stylesheet" media="screen" href="/_s/css/base/screen.css" />
+    {% endblock %}
+{% endblock %}
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+{% block body %}
+    {% block header_h1 %}<h2><a href="/">{{ settings.PRODUCT_NAME }}</a></h2>{% endblock %}
+    {% block content %}
+        <div id="gsfn_list_widget">
+            <a href="http://getsatisfaction.com/sarahpalinisjohnmccainsnewbicycle" class="widget_title"></a>
+            <div id="gsfn_content">Loading...</div>
+            <div class="powered_by"><a href="http://getsatisfaction.com/"><img alt="Favicon" src="http://www.getsatisfaction.com/favicon.gif" style="vertical-align: middle;" /></a> <a href="http://getsatisfaction.com/">Get Satisfaction support network</a></div>
+        </div>
+    {% endblock %}
+        <div id="footer">
+          <ul>
+              <li class="last"><a href="/help/">Help / Discuss</a></li>
+          </ul>
+            <p>
+                <a href="/">{{ settings.PRODUCT_NAME }}</a> &copy; {% now "Y" %}
+                <a href="/cee-dub/">cee-dub</a>,
+                <a href="/ydnar/">ydnar</a>,
+                <a href="/case/">Case</a> &amp;
+                <a href="/rk/">RK</a>.
+                Apologies to <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.com%2FBarack-Obama-Your-New-Bicycle%2Fdp%2F1592404162%2F&amp;tag=emptyage-20&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325">Mat</a>.
+            </p>
+        </div>
+{% include "modules/scripts.html" %}
+{% endblock %}
+    </body>
+</html>

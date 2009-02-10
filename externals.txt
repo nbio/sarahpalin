@@ -1,0 +1,2 @@
+app/nbio/django https://nbio.googlecode.com/svn/nbio_django/trunk/nbio/django
+app/appengine_django http://google-app-engine-django.googlecode.com/svn/trunk/appengine_django
